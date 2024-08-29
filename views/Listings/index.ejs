@@ -1,0 +1,105 @@
+<!-- @format -->
+
+<% layout("/layouts/boilerplate.ejs") -%>
+
+<div
+	id="filters"
+	class="sticky-top">
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-mountain-city"></i></div>
+		<p>Mountain</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-umbrella-beach"></i></div>
+		<p>Beach</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-tree"></i></div>
+		<p>Park</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-bed"></i></div>
+		<p>Rooms</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-person-swimming"></i></div>
+		<p>Pools</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-snowflake"></i></div>
+		<p>Arctic</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-water"></i></div>
+		<p>Lake</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-city"></i></div>
+		<p>Mansions</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-torii-gate"></i></div>
+		<p>Hanoks</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-tower-observation"></i></div>
+		<p>Towers</p>
+	</div>
+	<div class="filter mt-3">
+		<div><i class="fa-solid fa-sailboat"></i></div>
+		<p>Boat</p>
+	</div>
+	<div class="tax-toggle">
+		<div class="form-check-reverse form-switch mt-3">
+			<input
+				class="form-check-input"
+				type="checkbox"
+				role="switch"
+				id="flexSwitchCheckDefault" />
+			<label
+				class="form-check-label"
+				for="flexSwitchCheckDefault">
+				Display before taxes
+			</label>
+		</div>
+	</div>
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1mt-3">
+	<% for(let listing of allListings) { %>
+	<a
+		href="/listings/<%= listing._id %>"
+		class="listing-link">
+		<div class="card col listing-card">
+			<img
+				src="<%= listing.image.url %>"
+				class="card-img-top"
+				alt="listing_image"
+				style="height: 20rem" />
+			<div class="card-img-overlay"> </div>
+			<div class="card-body">
+				<p class="card-text">
+					<b><%= listing.title %><br /></b>
+					&#8377;<%= listing.price.toLocaleString("en-IN") %>/night
+					<i class="tax-info"><b>&nbsp; &nbsp;+18% GST</b></i>
+				</p>
+			</div>
+		</div>
+	</a>
+	<% } %>
+</div>
+
+<!-- Toggle Btn Functionality -->
+<script>
+	let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+	taxSwitch.addEventListener("click", () => {
+		let taxInfo = document.getElementsByClassName("tax-info");
+		for (let info of taxInfo) {
+			if (info.style.display != "inline") {
+				info.style.display = "inline";
+			} else {
+				info.style.display = "none";
+			}
+		}
+	});
+</script>
