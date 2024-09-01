@@ -8,7 +8,7 @@ module.exports.index = async (req, res) => {
 };
 
 module.exports.newFormRender = (req, res) => {
-	res.render("listings/new.ejs");
+	res.render("Listings/new.ejs");
 };
 
 module.exports.showListing = async (req, res) => {
@@ -19,7 +19,7 @@ module.exports.showListing = async (req, res) => {
 	if (!listing) {
 		req.flash("error", "Listing not Found!");
 	} else {
-		res.render("listings/show.ejs", { listing });
+		res.render("Listings/show.ejs", { listing });
 	}
 };
 
