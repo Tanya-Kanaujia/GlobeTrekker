@@ -148,7 +148,7 @@ body {
 	font-size: 13px;
 }
 
-@media (min-width: 980px) {
+@media (max-width: 980px) {
 	#filters {
 		display: none;
 	}
