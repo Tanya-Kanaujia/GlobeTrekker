@@ -28,6 +28,9 @@ body {
 .nav-link {
 	color: black !important;
 }
+.collapse {
+	background: white;
+}
 
 /* Footer */
 .f-info {
