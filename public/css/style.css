@@ -148,6 +148,12 @@ body {
 	font-size: 13px;
 }
 
+@media (orientation: portrait) {
+	#filters {
+		display: none;
+	}
+}
+
 /* toggle button */
 
 .tax-info {
