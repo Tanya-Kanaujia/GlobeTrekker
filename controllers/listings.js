@@ -4,11 +4,11 @@ const Listing = require("../models/listing");
 
 module.exports.index = async (req, res) => {
 	const allListings = await Listing.find({});
-	res.render("listings/index.ejs", { allListings });
+	res.render("Listings/index.ejs", { allListings });
 };
 
 module.exports.newFormRender = (req, res) => {
-	res.render("listings/new.ejs");
+	res.render("Listings/new.ejs");
 };
 
 module.exports.showListing = async (req, res) => {
@@ -19,7 +19,7 @@ module.exports.showListing = async (req, res) => {
 	if (!listing) {
 		req.flash("error", "Listing not Found!");
 	} else {
-		res.render("listings/show.ejs", { listing });
+		res.render("Listings/show.ejs", { listing });
 	}
 };
 
@@ -46,7 +46,7 @@ module.exports.renderEditForm = async (req, res) => {
 	}
 	let originalImage = listing.image.url;
 	originalImage = originalImage.replace("/upload", "/upload/w_250");
-	res.render("listings/edit.ejs", { listing, originalImage });
+	res.render("Listings/edit.ejs", { listing, originalImage });
 };
 
 module.exports.updateListing = async (req, res) => {
