@@ -19,7 +19,7 @@
 }
 
 .starability-result[data-rating="5"]::after {
-	width: 200px;
+	width: 150px;
 }
 
 .starability-result[data-rating="4"]::after {
