@@ -52,18 +52,18 @@
 					href="/listings/new"
 					>Add your place</a
 				>
-				<% if(!currentUser) { %>
+				<% if(!locals.currentUser) { %>
 				<a
 					class="nav-link active"
 					href="/signup"
 					><b>SignUp</b></a
 				>
 				<a
-					class="nav-link"
+					class="nav-link"aaaa
 					href="/login"
 					><b>LogIn</b></a
 				>
-				<% } %> <% if(currentUser) { %>
+				<% } %> <% if(!locals.currentUser) { %>
 				<a
 					class="nav-link"
 					href="/logout"
